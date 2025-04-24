@@ -3,7 +3,7 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
-mcp = FastMCP("weather")
+mcp = FastMCP("saillogger")
 
 # Constants
 API_BASE = "https://saillogger.com/ais/api"
@@ -93,6 +93,9 @@ async def get_ais_targets(latitude: float, longitude: float, radius: float, star
     else:
         return "No vessels found in the area."
 
-if __name__ == "__main__":
-    # Initialize and run the server
+def main():
+    """Entry point for the application."""
     mcp.run(transport='stdio')
+
+if __name__ == "__main__":
+    main() 

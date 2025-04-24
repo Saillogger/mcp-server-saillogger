@@ -1,10 +1,22 @@
 [project]
-name = "mcp-server-saillogger"
+name = "saillogger"
 version = "0.1.0"
 description = "Saillogger MCP Server"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
     "httpx>=0.28.1",
     "mcp[cli]>=1.6.0",
 ]
+
+[project.scripts]
+mcp-server-saillogger = "saillogger:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = ["pyright>=1.1.389", "ruff>=0.7.3"]
+
+
